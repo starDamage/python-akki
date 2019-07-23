@@ -1,0 +1,67 @@
+<%- include('../layout/header.ejs') %>
+	</head>
+	<body>
+		
+	<div class="colorlib-loader"></div>
+
+	<div id="page">
+    <%- include('../layout/navbar.ejs') %>
+    <div class="colorlib-product">
+			<div class="container">
+				<div class="row row-pb-lg product-detail-wrap">
+					<div class="col-sm-8">
+                        <form action="/checkout" method="POST">
+                            <div class="card">
+                                    <h3 class="card-header">Billing Details</h3>
+                                    <div class="card-body">
+                                      <h3 class="card-title">Shipping Contact:</h3>
+                                      <table id="contact" style="align-self: center;border: black">
+                                            <tr><td><input type="text" class="form-control" placeholder="First Name"></td>
+                                                <td><input type="text" class="form-control" placeholder="Last Name"></td>
+                                            </tr>
+                                            <tr>
+                                            <td><input type="text" class="form-control" placeholder="Primary Phone"></td>
+                                            <td><input type="text"  class="form-control" placeholder=" Email Address"></td>
+                                            </tr>
+                                        </table>
+                                      <br>
+                                      <br>
+                                      <h3 class="card-title">Shipping Address:</h3>
+                                    <table id="contact" style="align-self: center;border: black">
+                                            <tr>
+                                                <td><input type="text" class="form-control" placeholder="Zip Code"></td>
+                                                <td>Enter Zip for City and State </td>
+                                            </tr>
+                                            <tr><td colspan="2">
+                                                    <label for="exampleFormControlTextarea1">Address</label>
+                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                            </td>
+                                                
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2"><input type="text" class="form-control" placeholder=" Street Address"></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="2"><input type="text" class="form-control" placeholder="Apt, Suite ,Building"></td>
+                                            </tr>
+                                        </table>
+                                        <br>
+                                        <br>
+                                        <br>
+                                    </div>
+                                  </div>
+                                </form>
+                                </div>
+                                <div class="col-sm-4">
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <div class="input-group mb-4">
+                                        <input type="button" type="submit" class="form-cntrol" value="Place Order">
+                                        </div>
+                                </div>   
+                            </div>
+            </div>
+    </div>
+	
+<%- include('../layout/footer.ejs') %>

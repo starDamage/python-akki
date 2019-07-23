@@ -1,0 +1,187 @@
+<%- include('../layout/header.ejs') %>
+
+</head>
+<body>
+	<div class="colorlib-loader"></div>
+
+	<div id="page">
+	<%- include('../layout/navbar.ejs') %>
+		<aside id="colorlib-hero">
+			<div class="flexslider">
+				<ul class="slides">
+			   	<li style="background-image: url(https://7gigzxopz0uiqxo1-zippykid.netdna-ssl.com/wp-content/uploads/2016/01/Beet-Thinai-Paniyaram-%E2%80%94-Indian-Sweet-Dumplings.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-sm-6 offset-sm-3 text-center slider-text">
+				   				<div class="slider-text-inner">
+				   					<div class="desc">
+					   					<h1 class="head-1"></h1>
+					   					<h2 class="head-2">Sweets</h2>
+					   					<h2 class="head-3">Your sweet new getaway is just a sip away.</h2>
+					   					<p><a href="#" class="btn btn-primary">Shop Collection</a></p>
+				   					</div>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			   	<li style="background-image: url(images/raghuvir-sweets-slider.jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-sm-6 offset-sm-3 text-center slider-text">
+				   				<div class="slider-text-inner">
+				   					<div class="desc">
+					   					<h1 class="head-1">Huge</h1>
+					   					<h2 class="head-2">Sale</h2>
+					   					<h2 class="head-3"><strong class="font-weight-bold">50%</strong> Off</h2>
+					   					<p class="category"><span>Big sale Sweets</span></p>
+					   					<p><a href="#" class="btn btn-primary">Shop Collection</a></p>
+				   					</div>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			   	<li style="background-image: url(https://images.pexels.com/photos/941832/pexels-photo-941832.jpeg?cs=srgb&dl=indian-dessert-indian-food-traditional-indian-dessert-941832.jpg&fm=jpg);">
+			   		<div class="overlay"></div>
+			   		<div class="container-fluid">
+			   			<div class="row">
+				   			<div class="col-sm-6 offset-sm-3 text-center slider-text">
+				   				<div class="slider-text-inner">
+				   					<div class="desc">
+					   					<h1 class="head-1" style="color:white">New</h1>
+					   					<h2 class="head-2" style="color: white">Arrival</h2>
+					   					<h2 class="head-3" style="color: white">up to <strong class="font-weight-bold">30%</strong> off</h2>
+					   					<p class="category" ><span>So Sweet. So Good. Sure to bring smiles.</span></p>
+					   					<p><a href="#" class="btn btn-primary">Shop Collection</a></p>
+				   					</div>
+				   				</div>
+				   			</div>
+				   		</div>
+			   		</div>
+			   	</li>
+			  	</ul>
+		  	</div>
+		</aside>
+		<div class="colorlib-intro">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 text-center">
+						<h2 class="intro">Families are like peanut brittle- It takes a lot of sweetness to hold the nuts together.</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="colorlib-product">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-sm-6 text-center">
+						<div class="featured">
+							<a href="#" class="featured-img" style="background-image: url(https://cdn.pixabay.com/photo/2014/12/22/12/30/sweets-577228_960_720.jpg);"></a>
+							<div class="desc">
+								<h2><a href="#">Shop Sweets Collection</a></h2>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 text-center">
+						<div class="featured">
+							<a href="#" class="featured-img" style="background-image: url(https://t4.ftcdn.net/jpg/02/50/98/01/500_F_250980138_WI3iq92H6suqmAG1By8Ctvsfpz7Hit74.jpg);"></a>
+							<div class="desc">
+								<h2><a href="#">Shop Chaat Collection</a></h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="colorlib-product">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 offset-sm-2 text-center colorlib-heading">
+						<h2>Best Sellers</h2>
+					</div>
+				</div>
+				<% if (prods.length > 0){ %>
+				<div class="row row-pb-md">
+					<% for (let product of prods) { %>
+					<div class="col-lg-3 mb-4 text-center">
+						<div class="product-entry border">
+							<a href="#" class="prod-img">
+								<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLuCNPy6ruKI6Ee66UOYlxk8L8KwpFxtDDMV2F9tKmuQIWfe_-" class="img-fluid" alt="Free html5 bootstrap 4 template">
+							</a>
+							<div class="desc">
+								<h2><%= product.pName %></h2>
+								<span class="price"><%= product.pPrice %></span>
+								
+							</div>
+							<form action="/cart" method="POST">
+								<div class="row">
+									<br>
+									<br>
+									<input type="text" value="<%= product.pid %>" name="productid" hidden>
+									<div class="col"> <a href="/shop/<%= product.pid %>" class="btn btn-success">Details</a></div>
+									<div class="col">  <button class="btn btn-primary btn-addtocart" type="submit"><i class="icon-shopping-cart"></i>&nbsp;Add to Cart</button></div>
+								 
+								</div>
+							   </form>
+							<div class="row">
+								<br>
+							</div>
+						</div>
+					</div>
+					<% } %>
+<!-- 					
+					<div class="w-100"></div>
+		
+					<div class="w-100"></div>
+			
+					<div class="w-100"></div> -->
+		
+				</div>
+				<% } else {%>
+					<div class="row row-pb-md">
+						<h1>No Product Available</h1>
+					</div>
+				<% } %>	
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<p><a href="#" class="btn btn-primary btn-lg">Shop All Products</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="colorlib-partner">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-8 offset-sm-2 text-center colorlib-heading colorlib-heading-sm">
+						<h2>Our Speciality</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col partner-col text-center">
+						<img src=" " class="img-fluid" alt="Free html4 bootstrap 4 template">
+					    <h5>Sweets</h5>
+					</div>
+					<div class="col partner-col text-center">
+						<img src="" class="img-fluid" alt="Free html4 bootstrap 4 template">
+					</div>
+					<div class="col partner-col text-center">
+						<img src="https://shop.r10s.jp/myhoneyjapan/cabinet/cs09_1.jpg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+					</div>
+					<div class="col partner-col text-center">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeo-vKZivUmdSmS70Y6w1oFv5hLHMxRKH0qaL9A8dXF17LKPGHWw" class="img-fluid" alt="Free html4 bootstrap 4 template">
+					</div>
+					<div class="col partner-col text-center">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8Yv2y_Nu4LH9sBOsZPT6eNlVGKQuuumnmpkLqBH3QFgfX-cLqRg" class="img-fluid" alt="Free html4 bootstrap 4 template">
+					</div>
+				</div>
+			</div>
+		</div>		
+
+
+
+<%- include('../layout/footer.ejs') %>

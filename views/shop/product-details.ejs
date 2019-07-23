@@ -1,0 +1,122 @@
+<%- include('../layout/header.ejs') %>
+
+	</head>
+	<body>
+		
+	<div class="colorlib-loader"></div>
+
+	<div id="page">
+ <%- include('../layout/navbar.ejs') %>
+
+		<div class="breadcrumbs">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<p class="bread"><span><a href="index.html">Home</a></span> / <span>Product Details</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="colorlib-product">
+			<div class="container">
+				<div class="row row-pb-lg product-detail-wrap">
+					<div class="col-sm-8">
+						<div class="owl-carousel">
+							<div class="item">
+								<div class="product-entry border">
+									<a href="#" class="prod-img">
+										<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLuCNPy6ruKI6Ee66UOYlxk8L8KwpFxtDDMV2F9tKmuQIWfe_-" class="img-fluid" alt="Free html5 bootstrap 4 template">
+									</a>
+								</div>
+							</div>
+							<div class="item">
+								<div class="product-entry border">
+									<a href="#" class="prod-img">
+										<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLuCNPy6ruKI6Ee66UOYlxk8L8KwpFxtDDMV2F9tKmuQIWfe_-" class="img-fluid" alt="Free html5 bootstrap 4 template">
+									</a>
+								</div>
+							</div>
+							<div class="item">
+								<div class="product-entry border">
+									<a href="#" class="prod-img">
+										<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLuCNPy6ruKI6Ee66UOYlxk8L8KwpFxtDDMV2F9tKmuQIWfe_-" class="img-fluid" alt="Free html5 bootstrap 4 template">
+									</a>
+								</div>
+							</div>
+							<div class="item">
+								<div class="product-entry border">
+									<a href="#" class="prod-img">
+										<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLuCNPy6ruKI6Ee66UOYlxk8L8KwpFxtDDMV2F9tKmuQIWfe_-" class="img-fluid" alt="Free html5 bootstrap 4 template">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="product-desc">
+							<h3><%= prod.pName %></h3>
+							<p class="price">
+								<span>₹<%= prod.pPrice %></span> 
+	
+							</p>
+							<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+							<div class="size-wrap">
+								<div class="block-26 mb-2">
+									<h4>Quantity</h4>
+				            </div>
+							</div>
+					<form action="/cart" method="POST">	
+                     <div class="input-group mb-4">
+						<span><h3>KG :&nbsp;</h3></span> 
+						 <input type="text" id="quantitykg" name="quantitykg" class="form-control input-number" value="1"  min="1" max="100">
+						 <span><h3>GM :&nbsp;</h3></span> 
+						 <input type="text" id="quantitygm" name="quantitygm" class="form-control input-number"   max="100">
+                  	</div>
+                  	<div class="row">       
+					   <div class="col"><input type="text" value="<%= prod.pid %>" name="productid" hidden></div>		
+							<!-- <p class="addtocart"><a href="" class="btn btn-primary btn-addtocart"><i class="icon-shopping-cart"></i> Add to Cart</a></p> -->
+					</div>
+					<div class="row"> 
+							<div class="col"><button class="btn-success  btn-addtocart" type="submit"><i class="icon-shopping-cart"></i>&nbsp;Add to Cart</button></div>
+					</div>
+						</form>	
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="row">
+							<div class="col-md-12 pills">
+								<div class="bd-example bd-example-tabs">
+								  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+
+								    <li class="nav-item">
+								      <a class="nav-link active" id="pills-description-tab" data-toggle="pill" href="#pills-description" role="tab" aria-controls="pills-description" aria-expanded="true">Description</a>
+								    </li>
+								    <li class="nav-item">
+								      <a class="nav-link" id="pills-manufacturer-tab" data-toggle="pill" href="#pills-manufacturer" role="tab" aria-controls="pills-manufacturer" aria-expanded="true">Manufacturer</a>
+								    </li>
+								  </ul>
+
+								  <div class="tab-content" id="pills-tabContent">
+								    <div class="tab-pane border fade show active" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
+								      <p><%= prod.pDescription %></p>
+										
+								    </div>
+
+								    <div class="tab-pane border fade" id="pills-manufacturer" role="tabpanel" aria-labelledby="pills-manufacturer-tab">
+								      <p><%= prod.pManifacturing %></p>
+								    </div>
+
+								  </div>
+								</div>
+				         </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<%- include('../layout/footer.ejs') %>

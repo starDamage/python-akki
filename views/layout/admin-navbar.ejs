@@ -1,0 +1,109 @@
+<body>
+    <div class="body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <aside class="mdc-persistent-drawer mdc-persistent-drawer--open">
+        <nav class="mdc-persistent-drawer__drawer">
+          <div class="mdc-persistent-drawer__toolbar-spacer">
+            <a href="/admin/" class="brand-logo">
+                          <img src="images/logo.svg" alt="logo">
+                      </a>
+          </div>
+          <div class="mdc-list-group">
+            <nav class="mdc-list mdc-drawer-menu">
+              <div class="mdc-list-item mdc-drawer-item">
+                <a class="mdc-drawer-link" href="/admin/Dashboard">
+                  <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">desktop_mac</i>
+                 <h4> Dashboard</h4>
+
+                </a>
+              </div>
+              <div class="mdc-list-item mdc-drawer-item">
+                <a class="mdc-drawer-link" href="/admin/add-product">
+                  <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">track_changes</i>
+                 <h4> Add Products</h4>
+                </a>
+              </div>
+              <div class="mdc-list-item mdc-drawer-item">
+                <a class="mdc-drawer-link" href="/admin/list-all-products">
+                  <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">grid_on</i>
+                <h4> List of Products</h4>
+                </a>
+              </div>
+              <div class="mdc-list-item mdc-drawer-item">
+                <a class="mdc-drawer-link" href="pages/charts/chartjs.html">
+                  <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">pie_chart_outlined</i>
+                <h4>Users</h4> 
+                </a>
+              </div>
+              <div class="mdc-list-item mdc-drawer-item" href="#" data-toggle="expansionPanel" target-panel="sample-page-submenu">
+                <a class="mdc-drawer-link" href="#">
+                  <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">pages</i>
+                  <h4>Orders</h4>
+                 
+                </a>
+                <!-- <div class="mdc-expansion-panel" id="sample-page-submenu">
+                  <nav class="mdc-list mdc-drawer-submenu">
+                    <div class="mdc-list-item mdc-drawer-item">
+                      <a class="mdc-drawer-link" href="pages/samples/blank-page.html">
+                        Blank Page
+                      </a>
+                    </div>
+                    <div class="mdc-list-item mdc-drawer-item">
+                      <a class="mdc-drawer-link" href="pages/samples/403.html">
+                        403
+                      </a>
+                    </div>
+                    <div class="mdc-list-item mdc-drawer-item">
+                      <a class="mdc-drawer-link" href="pages/samples/404.html">
+                        404
+                      </a>
+                    </div>
+                    <div class="mdc-list-item mdc-drawer-item">
+                      <a class="mdc-drawer-link" href="pages/samples/500.html">
+                        500
+                      </a>
+                    </div>
+                    <div class="mdc-list-item mdc-drawer-item">
+                      <a class="mdc-drawer-link" href="pages/samples/505.html">
+                        505
+                      </a>
+                    </div>
+                    <div class="mdc-list-item mdc-drawer-item">
+                      <a class="mdc-drawer-link" href="pages/samples/login.html">
+                        Login
+                      </a>
+                    </div>
+                    <div class="mdc-list-item mdc-drawer-item">
+                      <a class="mdc-drawer-link" href="pages/samples/register.html">
+                        Register
+                      </a>
+                    </div>
+  
+                  </nav>
+                </div> -->
+              </div>
+              <div class="mdc-list-item mdc-drawer-item">
+                  <a class="mdc-drawer-link" href="pages/charts/chartjs.html">
+                    <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">pages</i>
+                  <h4>LogOut</h4> 
+                  </a>
+                </div>
+            </nav>
+          </div>
+        </nav>
+      </aside>
+      <!-- partial -->
+      <!-- partial:partials/_navbar.html -->
+      <header class="mdc-toolbar mdc-elevation--z4 mdc-toolbar--fixed">
+        <div class="mdc-toolbar__row">
+          <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+            <a href="#" class="menu-toggler material-icons mdc-toolbar__menu-icon">menu</a>
+            <span class="mdc-toolbar__input">
+              <div class="mdc-text-field">
+                  <h1 style="color: wheat"><%= pageTitle %></h1>
+              </div>
+            </span>
+          </section>
+        
+        </div>
+      </header>

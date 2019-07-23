@@ -1,0 +1,155 @@
+<%- include('../layout/admin-header.ejs'); %>
+<%- include('../layout/admin-navbar.ejs'); %>
+<style>
+  input[type="file"] {
+  display: none;
+}
+</style>
+<div class="card mainContainerDeatils">
+  <!-- <div class="row">
+    <div class="col-12">Enter the Product Name: </div>
+    <div class="col-12"><input type="text"> <button class="btn btn-success"> submit</button></div>
+  </div> -->
+  <form action="<% if (pageTitle ==='Add Product'){ %>/admin/product <% } else { %> /admin/productupdate <% } %> " method="POST">
+<!-- for modal -->
+ <% if (pageTitle === 'Edit Product') { %>
+    <input type="text" value="<%= prods._id %>" name="_id" hidden>
+  <% } %>   
+  <div class="mdc-layout-grid__cell stretch-card mdc-layout-grid__cell--span-12">
+    <div class="card">
+          <div class="container">
+               <div class="row">
+                  <div class="col-sm-3">
+                         
+                  </div>
+                  <div class="col-sm-3">
+                      <h4>Enter the Product Name:</h4>
+                  </div>
+                  <div class="col-sm-3">
+                      <input type="text" class="form-control" name="pName" value="<% if(pageTitle ==='Edit Product'){ %><%= prods.pName %><% }%>">
+                  </div>
+                  <div class="col-sm-3">
+                  </div>
+                </div>
+            </div>
+            <br>
+            <div class="container">
+                <div class="row">
+                   <div class="col-sm-3">
+                          
+                   </div>
+                   <div class="col-sm-3">
+                       <h4> Product Categotry:</h4>
+                   </div>
+                   <div class="col-sm-3">
+                      <select name="pCategoty" id="pCategoty" class="form-control">
+                          <option value="Boots">Boots</option>
+                          <option value="Shoes">Shoes</option>
+                          <option value="Sandals">Sandals</option>
+                          <option value="Indoor footwear">Indoor footwear</option>
+                          <option value="Specific footwear">Specific footwear</option>
+                          <option value="Traditional footwear">Traditional footwear</option>
+                       </select>
+                   </div>
+                   <div class="col-sm-3">
+                   </div>
+                 </div>
+             </div>
+             <br>
+             <div class="container">
+              <div class="row">
+                 <div class="col-sm-3">
+                        
+                 </div>
+                 <div class="col-sm-3">    
+                     <h4> Product price(₹)</h4>
+                 </div>
+                 <div class="col-sm-3">
+                  <input type="text" class="form-control" name="pPrice" value="<% if(pageTitle ==='Edit Product'){ %><%= prods.pPrice %><% }%>">
+                 </div>
+                 <div class="col-sm-3">
+                 </div>
+               </div>
+           </div>
+           <br>
+           <div class="container">
+            <div class="row">
+               <div class="col-sm-3">
+                      
+               </div>
+               <div class="col-sm-3">
+                   <h4> Product Description</h4>
+               </div>
+               <div class="col-sm-3">
+                <textarea class="form-control" rows="5" id="pDescription" name="pDescription"><% if(pageTitle ==='Edit Product'){ %><%= prods.pDescription %><% }%></textarea>
+               </div>
+               <div class="col-sm-3">
+               </div>
+             </div>
+         </div> 
+         <br>
+         <div class="container">
+          <div class="row">
+             <div class="col-sm-3">
+                    
+             </div>
+             <div class="col-sm-3">
+                 <h4> Manifacturing Description</h4>
+             </div>
+             <div class="col-sm-3">
+              <textarea class="form-control" rows="5" id="pManifacturing" name="pManifacturing"><% if(pageTitle ==='Edit Product'){ %><%= prods.pDescription %><% }%></textarea>
+             </div>
+             <div class="col-sm-3">
+             </div>
+           </div>
+       </div> 
+       <br>
+         <div class="container">
+          <div class="row">
+             <div class="col-sm-3">
+                    
+             </div>
+             <div class="col-sm-3">
+                 <h4> Product Image</h4>
+             </div>
+             <div class="col-sm-3">
+                <label> Enter Your File
+                    <input type="file" size="60"  name="pImage" >
+                    </label> 
+                <!-- <input type="file" class="btn-success"> -->
+             </div>
+             <div class="col-sm-3">
+             </div>
+           </div>
+       </div> 
+       <br>
+       <div class="container">
+        <div class="row">
+           <div class="col-sm-6">
+                  
+           </div>
+           <div class="col-sm-6">
+             
+             <button type="submit" class="btn btn-success"><% if (pageTitle === 'Add Product') { %>Add <% } else { %>Edit <% } %></button>
+           </div>
+           <!-- <div class="col-sm-2">
+           </div>
+           <div class="col-sm-3">
+            </div> -->
+         </div>
+     </div> 
+     <br>
+     <br>
+     <br>
+    </div>
+    </div>
+ 
+  </form>
+  
+<br>
+<br>
+<br>
+</div>
+</div>
+  <%- include('../layout/admin-footer.ejs'); %>
+

@@ -1,0 +1,63 @@
+<%- include('../layout/header.ejs') %>
+
+</head>
+<body>
+	<div class="colorlib-loader"></div>
+
+	<div id="page">
+    <%- include('../layout/navbar.ejs') %>
+		<div class="colorlib-product">
+			<div class="container">
+				<% if (prods.length > 0){ %>
+				<div class="row row-pb-md">
+					<% for (let product of prods) { %>
+					<div class="col-lg-3 mb-4 text-center">
+						<div class="product-entry border">
+							<a href="#" class="prod-img">
+								<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLuCNPy6ruKI6Ee66UOYlxk8L8KwpFxtDDMV2F9tKmuQIWfe_-" class="img-fluid" alt="Free html5 bootstrap 4 template">
+							</a>
+							<div class="desc">
+								<h2><%= product.pName %></h2>
+								<span class="price"><%= product.pPrice %></span>
+								
+							</div>
+							<form action="/cart" method="POST">
+							<div class="row">
+								<br>
+								<br>
+								<input type="text" value="<%= product._id %>" name="productid" hidden>
+								<div class="col"> <a href="/shop/<%= product._id %>" class="btn btn-success">Details</a></div>
+								<div class="col">  <button class="btn btn-primary btn-addtocart" type="submit"><i class="icon-shopping-cart"></i>&nbsp;Add to Cart</button></div>
+							 
+							</div>
+						   </form>
+							<div class="row">
+								<br>
+							</div>
+						</div>
+					</div>
+					<% } %>
+<!-- 					
+					<div class="w-100"></div>
+		
+					<div class="w-100"></div>
+			
+					<div class="w-100"></div> -->
+		
+				</div>
+				<% } else {%>
+					<div class="row row-pb-md">
+						<h1>No Product Available</h1>
+					</div>
+				<% } %>	
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<p><a href="#" class="btn btn-primary btn-lg">Shop All Products</a></p>
+					</div>
+				</div>
+			</div>
+		</div>		
+
+
+
+<%- include('../layout/footer.ejs') %>
